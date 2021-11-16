@@ -1,3 +1,0 @@
-Throw that key.json with your private key inside the folder theKEY
-
-Remember: is a privatekey assigned to you. Don't publish it
