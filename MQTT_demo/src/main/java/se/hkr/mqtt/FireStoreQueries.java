@@ -9,217 +9,279 @@ public class FireStoreQueries {
     //ALL CREATE methods are working as they should.
 
     void createCollection(String collectionName){
-        String seed = "1@@1@@" + collectionName;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String seed = "1@@1@@" + collectionName;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.println("Creating a collection with the name " + collectionName);
     }
 
     //It creates a Collection that includes a document inside.
     //It does pretty much the same thing a createDocument
     void createCollectionWithDocument(String collectionName, String documentName){
-        String seed = "1@@1@@" + collectionName + "@@" + documentName;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String seed = "1@@1@@" + collectionName + "@@" + documentName;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Creating a document with the name " + documentName);
+        System.out.println(" together with the collection " + collectionName);
     }
 
     //It creates a Collection that includes a document inside.
     //It does pretty much the same thing a createElement
-    void createCollectionWithDocumentAndElement(String collectionName, String documentName, String key, String value){
-        String seed = "1@@1@@" + collectionName + "@@" + documentName + "@@" + key + "@@" + value;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+    void createCollectionWithDocumentAndElement(String collectionName, String documentName, String key,
+                                                String value){
+//        String seed = "1@@1@@" + collectionName + "@@" + documentName + "@@" + key + "@@" + value;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Creating a document with the name " + documentName);
+        System.out.print(" with an element with the key " + key);
+        System.out.print(" and the value " + value);
+        System.out.println(" together with the collection " + collectionName);
     }
 
     //It creates a document inside a Collection. If the collection does not exists, it creates one.
     void createDocument(String collectionName, String documentName){
-        String seed = "1@@2@@" + collectionName + "@@" + documentName;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String seed = "1@@2@@" + collectionName + "@@" + documentName;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Creating a document with the name " + documentName);
+        System.out.println(" inside the collection " + collectionName);
     }
 
     //It creates a document inside a Collection. If the collection does not exist, it creates one and adds an element.
     //It does the same thing with createElement
     void createDocumentWithElement(String collectionName, String documentName, String key, String value){
-        String seed = "1@@2@@" + collectionName + "@@" + documentName + "@@" + key + "@@" + value;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String seed = "1@@2@@" + collectionName + "@@" + documentName + "@@" + key + "@@" + value;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Creating a document with the name " + documentName);
+        System.out.print(" with an element with the key " + key);
+        System.out.print(" and the value " + value);
+        System.out.println(" inside the collection " + collectionName);
     }
 
     //it creates an element inside a document. if document does not exist, it creates one.
     void createElement(String collectionName, String documentName, String key, String value){
-        String seed = "1@@3@@" + collectionName + "@@" + documentName + "@@" + key + "@@" + value;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String seed = "1@@3@@" + collectionName + "@@" + documentName + "@@" + key + "@@" + value;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Creating");
+        System.out.print(" an element with the key " + key);
+        System.out.print(" and the value " + value);
+        System.out.println(" inside the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
     }
 
     //It creates or updates a document from a HashMap. A truly poweful tool and the way to do things
     void createDocumentfromAMap(String collectionName, String documentName, HashMap<String,String> map){
-        String preseed = mapToSeed(map);
-        String seed = "1@@4@@" + collectionName + "@@" + documentName + "@@" + preseed;
-        //System.out.println("the seed is " + seed);
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String preseed = mapToSeed(map);
+//        String seed = "1@@4@@" + collectionName + "@@" + documentName + "@@" + preseed;
+//        //System.out.println("the seed is " + seed);
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Creating");
+        System.out.print(" a map of String");
+        System.out.println(" inside the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
     }
 
     //It creates or updates a document from a HashMap. A truly poweful tool and the way to do things
     void createDocumentfromAMap2(String collectionName, String documentName, HashMap<String,Integer> map){
-        String preseed = mapToSeed2(map);
-        String seed = "1@@4@@" + collectionName + "@@" + documentName + "@@" + preseed;
-        //System.out.println("the seed is " + seed);
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String preseed = mapToSeed2(map);
+//        String seed = "1@@4@@" + collectionName + "@@" + documentName + "@@" + preseed;
+//        //System.out.println("the seed is " + seed);
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Creating");
+        System.out.print(" a map of integers");
+        System.out.println(" inside the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
     }
 
     //It creates or updates a document from a HashMap. A truly poweful tool and the way to do things
     void createDocumentfromAMap3(String collectionName, String documentName, HashMap<String,Double> map){
-        String preseed = mapToSeed3(map);
-        String seed = "1@@4@@" + collectionName + "@@" + documentName + "@@" + preseed;
-        //System.out.println("the seed is " + seed);
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String preseed = mapToSeed3(map);
+//        String seed = "1@@4@@" + collectionName + "@@" + documentName + "@@" + preseed;
+//        //System.out.println("the seed is " + seed);
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Creating");
+        System.out.print(" a map of Double");
+        System.out.println(" inside the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
     }
 
     //========== READ ============
 
     String[] readCollection(String collectionName){
-        String seed = "2@@1@@" + collectionName;
-        String word = "";
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, true);
-        word = echoClient.returnEcho();
-        String[] arr = seedToArray(word);
-        echoClient.terminate();
-        return arr;
+//        String seed = "2@@1@@" + collectionName;
+//        String word = "";
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, true);
+//        word = echoClient.returnEcho();
+//        String[] arr = seedToArray(word);
+//        echoClient.terminate();
+        System.out.print("Reading");
+        System.out.println(" the collection " + collectionName);
+        return new String[0];
     }
 
     //It reads all the content of a document and return a HashMap with the key/value pairs of the document
     HashMap<String, String> readDocument(String collectionName, String documentName){
-        HashMap<String, String> map =  new HashMap();
-        String seed = "2@@2@@" + collectionName + "@@" + documentName;
-        String word = "";
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, true);
-        word = echoClient.returnEcho();
-        if(!word.equalsIgnoreCase("-1")){
-            map = seedToMap(word);
-        }
-        echoClient.terminate();
-        return map;
+//        HashMap<String, String> map =  new HashMap();
+//        String seed = "2@@2@@" + collectionName + "@@" + documentName;
+//        String word = "";
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, true);
+//        word = echoClient.returnEcho();
+//        if(!word.equalsIgnoreCase("-1")){
+//            map = seedToMap(word);
+//        }
+//        echoClient.terminate();
+        System.out.print("Reading");
+        System.out.print(" a map of String");
+        System.out.println(" inside the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
+        return new HashMap();
     }
 
     //It reads all the content of a document and return a HashMap with the key/value pairs of the document
     HashMap<String, Integer> readDocument2(String collectionName, String documentName){
-        HashMap<String, Integer> map =  new HashMap();
-        String seed = "2@@2@@" + collectionName + "@@" + documentName;
-        String word = "";
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, true);
-        word = echoClient.returnEcho();
-        if(!word.equalsIgnoreCase("-1")){
-            map = seedToMap2(word);
-        }
-
-        echoClient.terminate();
-        return map;
+//        HashMap<String, Integer> map =  new HashMap();
+//        String seed = "2@@2@@" + collectionName + "@@" + documentName;
+//        String word = "";
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, true);
+//        word = echoClient.returnEcho();
+//        if(!word.equalsIgnoreCase("-1")){
+//            map = seedToMap2(word);
+//        }
+//
+//        echoClient.terminate();
+//        return map;
+        System.out.print("Reading");
+        System.out.print(" a map of Integers");
+        System.out.println(" inside the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
+        return new HashMap();
     }
 
     //It reads all the content of a document and return a HashMap with the key/value pairs of the document
     HashMap<String, Double> readDocument3(String collectionName, String documentName){
-        HashMap<String, Double> map =  new HashMap();
-        String seed = "2@@2@@" + collectionName + "@@" + documentName;
-        String word = "";
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, true);
-        word = echoClient.returnEcho();
-        if(!word.equalsIgnoreCase("-1")){
-            map = seedToMap3(word);
-        }
-
-        echoClient.terminate();
-        return map;
+//        HashMap<String, Double> map =  new HashMap();
+//        String seed = "2@@2@@" + collectionName + "@@" + documentName;
+//        String word = "";
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, true);
+//        word = echoClient.returnEcho();
+//        if(!word.equalsIgnoreCase("-1")){
+//            map = seedToMap3(word);
+//        }
+//
+//        echoClient.terminate();
+//        return map;
+        System.out.print("Reading");
+        System.out.print(" a map of Doubles");
+        System.out.println(" inside the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
+        return new HashMap();
     }
 
     String readElement(String collectionName, String documentName, String key){
-        String seed = "2@@3@@" + collectionName + "@@" + documentName + "@@" + key;
-        String word = "";
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, true);
-        word = echoClient.returnEcho();
-        echoClient.terminate();
-        return word;
+//        String seed = "2@@3@@" + collectionName + "@@" + documentName + "@@" + key;
+//        String word = "";
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, true);
+//        word = echoClient.returnEcho();
+//        echoClient.terminate();
+//        return word;
+        System.out.print("Reading");
+        System.out.print(" an element with the key " + key);
+        System.out.print(" inside the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
+        return "";
     }
 
     HashMap<String, String> readOneElementFromEachDocument(String collectionName, String key){
-        String seed = "2@@7@@" + collectionName + "@@" + "notAValue" + "@@" + key;
-        HashMap<String, String> map =  new HashMap();
-        String word = "";
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, true);
-        word = echoClient.returnEcho();
-        echoClient.terminate();
-        map = seedToMap(word);
-        return map;
+//        String seed = "2@@7@@" + collectionName + "@@" + "notAValue" + "@@" + key;
+//        HashMap<String, String> map =  new HashMap();
+//        String word = "";
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, true);
+//        word = echoClient.returnEcho();
+//        echoClient.terminate();
+//        map = seedToMap(word);
+//        return map;
+        System.out.print("Reading");
+        System.out.print(" a map of one element with the key " + key);
+        System.out.print(" from each document ");
+        System.out.println(" inside the collection " + collectionName);
+        return new HashMap();
     }
 
     //========== EXISTS ============
 
     boolean existsCollection(String collectionName){
-        String seed = "2@@4@@" + collectionName;
-        String word = "";
-        boolean answer = false;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, true);
-        word = echoClient.returnEcho();
-        if(word.equalsIgnoreCase("false")){
-            answer = false;
-        } else {
-            answer = true;
-        }
-        echoClient.terminate();
-        return answer;
+//        String seed = "2@@4@@" + collectionName;
+//        String word = "";
+//        boolean answer = false;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, true);
+//        word = echoClient.returnEcho();
+//        if(word.equalsIgnoreCase("false")){
+//            answer = false;
+//        } else {
+//            answer = true;
+//        }
+//        echoClient.terminate();
+//        return answer;
+        System.out.println("Checks if the collection " + collectionName + " exists");
+        return true;
     }
 
     boolean existsDocument(String collectionName, String documentName){
-        String seed = "2@@5@@" + collectionName + "@@" + documentName;
-        String word = "";
-        boolean answer = false;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, true);
-        word = echoClient.returnEcho();
-        if(word.equalsIgnoreCase("false")){
-            answer = false;
-        } else {
-            answer = true;
-        }
-        echoClient.terminate();
-        return answer;
+//        String seed = "2@@5@@" + collectionName + "@@" + documentName;
+//        String word = "";
+//        boolean answer = false;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, true);
+//        word = echoClient.returnEcho();
+//        if(word.equalsIgnoreCase("false")){
+//            answer = false;
+//        } else {
+//            answer = true;
+//        }
+//        echoClient.terminate();
+//        return answer;
+        System.out.println("Checks if the document " + documentName +
+                "  collection " + collectionName + " exists");
+        return true;
     }
 
-    //legacy code. it will not be used
-    boolean existsKey2(String collectionName, String documentName, String key){
-        String seed = "2@@6@@" + collectionName + "@@" + documentName + "@@" + key;
-        String word = "";
-        boolean answer = false;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, true);
-        word = echoClient.returnEcho();
-        if(word.equalsIgnoreCase("false")){
-            answer = false;
-        } else {
-            answer = true;
-        }
-        echoClient.terminate();
-        return answer;
-    }
+//    //legacy code. it will not be used
+//    boolean existsKey2(String collectionName, String documentName, String key){
+//        String seed = "2@@6@@" + collectionName + "@@" + documentName + "@@" + key;
+//        String word = "";
+//        boolean answer = false;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, true);
+//        word = echoClient.returnEcho();
+//        if(word.equalsIgnoreCase("false")){
+//            answer = false;
+//        } else {
+//            answer = true;
+//        }
+//        echoClient.terminate();
+//        return answer;
+//    }
 
     //it finds if a key exists.
     //The new way to do things. It is the most high-tech piece of code of the client and server instance
@@ -227,57 +289,61 @@ public class FireStoreQueries {
     //firebase. Use it in single operation and not in group exists() requests.
     //try to avoid using this method as much as possible.
     boolean existsKey(String collectionName, String documentName, String key){
-        HashMap<String, String> map =  new HashMap();
-        HashMap<String, String> map2 =  new HashMap();
-        HashMap<String, String> map3 =  new HashMap();
-        map = readDocument(collectionName,documentName);
-        if (existsDocument(collectionName,documentName)) {
-            if(map.isEmpty()){
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                map2 = readDocument(collectionName,documentName);
-                if(map2.isEmpty()){
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    map3 = readDocument(collectionName,documentName);
-                    if(map3.isEmpty()){
-                        return false;
-                    }
-                }
-            }
-            if(map.containsKey(key)){
-                return true;
-            } else {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                map2 = readDocument(collectionName,documentName);
-                if(map2.containsKey(key)){
-                    return true;
-                } else {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    map3 = readDocument(collectionName,documentName);
-                    if(map3.containsKey(key)){
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            }
-        } //if existDocument ends here
-        return false;
+//        HashMap<String, String> map =  new HashMap();
+//        HashMap<String, String> map2 =  new HashMap();
+//        HashMap<String, String> map3 =  new HashMap();
+//        map = readDocument(collectionName,documentName);
+//        if (existsDocument(collectionName,documentName)) {
+//            if(map.isEmpty()){
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                map2 = readDocument(collectionName,documentName);
+//                if(map2.isEmpty()){
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                    map3 = readDocument(collectionName,documentName);
+//                    if(map3.isEmpty()){
+//                        return false;
+//                    }
+//                }
+//            }
+//            if(map.containsKey(key)){
+//                return true;
+//            } else {
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                map2 = readDocument(collectionName,documentName);
+//                if(map2.containsKey(key)){
+//                    return true;
+//                } else {
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                    map3 = readDocument(collectionName,documentName);
+//                    if(map3.containsKey(key)){
+//                        return true;
+//                    } else {
+//                        return false;
+//                    }
+//                }
+//            }
+//        } //if existDocument ends here
+//        return false;
+        System.out.println("Checks if the element with the key "
+                + key + " inside the document " + documentName +
+                "  collection " + collectionName + " exists");
+        return true;
     }
 
     //It checks if a specific value exists. It is the most high-tech piece of code of the client and server instance
@@ -285,103 +351,126 @@ public class FireStoreQueries {
     //firebase. Use it in single operation and not in group exists() requests.
     //try to avoid using this method as much as possible.
     boolean existsValue(String collectionName, String documentName, String value){
-        HashMap<String, String> map =  new HashMap();
-        HashMap<String, String> map2 =  new HashMap();
-        HashMap<String, String> map3 =  new HashMap();
-        map = readDocument(collectionName,documentName);
-        if (existsDocument(collectionName,documentName)) {
-            if(map.isEmpty()){
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                map2 = readDocument(collectionName,documentName);
-                if(map2.isEmpty()){
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    map3 = readDocument(collectionName,documentName);
-                    if(map3.isEmpty()){
-                        return false;
-                    }
-                }
-            }
-            if(map.containsValue(value)){
-                return true;
-            } else {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                map2 = readDocument(collectionName,documentName);
-                if(map2.containsValue(value)){
-                    return true;
-                } else {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    map3 = readDocument(collectionName,documentName);
-                    if(map3.containsValue(value)){
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            }
-        } //if existDocument ends here
-        return false;
+//        HashMap<String, String> map =  new HashMap();
+//        HashMap<String, String> map2 =  new HashMap();
+//        HashMap<String, String> map3 =  new HashMap();
+//        map = readDocument(collectionName,documentName);
+//        if (existsDocument(collectionName,documentName)) {
+//            if(map.isEmpty()){
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                map2 = readDocument(collectionName,documentName);
+//                if(map2.isEmpty()){
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                    map3 = readDocument(collectionName,documentName);
+//                    if(map3.isEmpty()){
+//                        return false;
+//                    }
+//                }
+//            }
+//            if(map.containsValue(value)){
+//                return true;
+//            } else {
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                map2 = readDocument(collectionName,documentName);
+//                if(map2.containsValue(value)){
+//                    return true;
+//                } else {
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                    map3 = readDocument(collectionName,documentName);
+//                    if(map3.containsValue(value)){
+//                        return true;
+//                    } else {
+//                        return false;
+//                    }
+//                }
+//            }
+//        } //if existDocument ends here
+//        return false;
+        System.out.println("Checks if the element with the value "
+                + value + " inside the document " + documentName +
+                "  collection " + collectionName + " exists");
+        return true;
     }
 
     //========== UPDATE ============
 
     void updateCollection(String collectionName){
-        String seed = "3@@1@@" + collectionName;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String seed = "3@@1@@" + collectionName;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Updating");
+        System.out.println(" the collection " + collectionName);
     }
 
     void updateDocument(String collectionName, String documentName){
-        String seed = "3@@2@@" + collectionName + "@@" + documentName;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String seed = "3@@2@@" + collectionName + "@@" + documentName;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Updating");
+        System.out.print(" the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
     }
 
     void updateElement(String collectionName, String documentName, String key, String value){
-        String seed = "3@@3@@" + collectionName + "@@" + documentName + "@@" + key + "@@" + value;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String seed = "3@@3@@" + collectionName + "@@" + documentName + "@@" + key + "@@" + value;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Updating");
+        System.out.print(" the element with the key " + key);
+        System.out.print(" with the value " + value);
+        System.out.print(" inside the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
     }
 
     //========== DELETE ============
 
     void deleteCollection(String collectionName){
-        String seed = "4@@1@@" + collectionName;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String seed = "4@@1@@" + collectionName;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Deleting");
+        System.out.println(" the collection " + collectionName);
     }
 
     void deleteDocument(String collectionName, String documentName){
-        String seed = "4@@2@@" + collectionName + "@@" + documentName;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String seed = "4@@2@@" + collectionName + "@@" + documentName;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Deleting");
+        System.out.print(" the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
     }
 
     void deleteElement(String collectionName, String documentName, String key){
-        String seed = "4@@3@@" + collectionName + "@@" + documentName + "@@" + key;
-        EchoClient echoClient = new EchoClient();
-        echoClient.start(seed, false);
-        echoClient.terminate();
+//        String seed = "4@@3@@" + collectionName + "@@" + documentName + "@@" + key;
+//        EchoClient echoClient = new EchoClient();
+//        echoClient.start(seed, false);
+//        echoClient.terminate();
+        System.out.print("Deleting");
+        System.out.print(" the element with the key " + key);
+        System.out.print(" inside the document " + documentName);
+        System.out.println(" inside the collection " + collectionName);
     }
 
 

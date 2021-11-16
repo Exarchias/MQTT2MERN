@@ -1469,10 +1469,10 @@ public class MQTT_demo {
         House house = new House(0);
         DataHolder.houses.add(0, house);
 
-        //loading the data
-        DataHolder.loadHashMapsFromFireStore(0);
-        DataHolder.displayTheContents(0);
-        DataHolder.displayAnArrayList(DataHolder.houses.get(0).mainLogs, "Main logs for testing", 0);
+//        //loading the data
+//        DataHolder.loadHashMapsFromFireStore(0);
+//        DataHolder.displayTheContents(0);
+//        DataHolder.displayAnArrayList(DataHolder.houses.get(0).mainLogs, "Main logs for testing", 0);
 
 
         //adding subscriptions by the "subscriptions.txt" file
@@ -1554,52 +1554,52 @@ public class MQTT_demo {
 
             t.start();
 
-            //pulishing stuff.
-            Thread displayer = new Thread(){
-                public void run(){
-                    //Thread Implmentation code here
-                    while(true){
-                        //1 is the identifier. here, and autmatic system will be implemented
-                        try {
-                            DataHolder.publisher(sampleClient,0);
-                            try {
-                                Thread.sleep(5000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        } catch (MqttException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
+//            //pulishing stuff.
+//            Thread displayer = new Thread(){
+//                public void run(){
+//                    //Thread Implmentation code here
+//                    while(true){
+//                        //1 is the identifier. here, and autmatic system will be implemented
+//                        try {
+//                            DataHolder.publisher(sampleClient,0);
+//                            try {
+//                                Thread.sleep(5000);
+//                            } catch (InterruptedException e) {
+//                                e.printStackTrace();
+//                            }
+//                        } catch (MqttException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }
+//
+//            };
+//
+//            displayer.start();
 
-            };
 
-            displayer.start();
-
-
-            //loading users every 60 seconds.
-            Thread loader = new Thread(){
-                public void run(){
-                    //Thread Implmentation code here
-                    while(true){
-                        try {
-                            Thread.sleep(60000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        DB db = new DB();
-                        try {
-                            db.loadUsers();
-                        } catch (NoSuchAlgorithmException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-
-            };
-
-            loader.start();
+//            //loading users every 60 seconds.
+//            Thread loader = new Thread(){
+//                public void run(){
+//                    //Thread Implmentation code here
+//                    while(true){
+//                        try {
+//                            Thread.sleep(60000);
+//                        } catch (InterruptedException e) {
+//                            e.printStackTrace();
+//                        }
+//                        DB db = new DB();
+//                        try {
+//                            db.loadUsers();
+//                        } catch (NoSuchAlgorithmException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }
+//
+//            };
+//
+//            loader.start();
 
 
 
@@ -1618,62 +1618,6 @@ public class MQTT_demo {
                     sampleClient.publish(topic, message);
                     System.out.println("publish: " + content);
 
-
-                        Thread.sleep(3000);
-                        //topic smart_house/gui/twilight
-                        if (DataHolder.publishing) {
-                            topic = "smart_house/gui/twilight";
-                            content = String.valueOf(counting);
-                            message = new MqttMessage(content.getBytes());
-                            message.setQos(0);
-                            sampleClient.publish(topic, message);
-                            System.out.println("publish: " + content);
-                        }
-
-
-                    Thread.sleep(3000);
-                    //topic smart_house/gui/electricity_consumptiontest
-                    if (DataHolder.publishing) {
-                        topic = "smart_house/gui/electricity_consumptiontest";
-                        content = String.valueOf(counting);
-                        message = new MqttMessage(content.getBytes());
-                        message.setQos(0);
-                        sampleClient.publish(topic, message);
-                        System.out.println("publish: " + content);
-                    }
-
-                    Thread.sleep(6000);
-                    //web/request/electricity_consumption
-                    if (DataHolder.publishing) {
-                        topic = "web/request/twilight";
-                        content = String.valueOf(1);
-                        message = new MqttMessage(content.getBytes());
-                        message.setQos(0);
-                        sampleClient.publish(topic, message);
-                        System.out.println("publish: " + content);
-                    }
-
-                    Thread.sleep(6000);
-                    //web/request/electricity_consumption
-                    if (DataHolder.publishing) {
-                        topic = "web/request/twilight";
-                        content = String.valueOf(2);
-                        message = new MqttMessage(content.getBytes());
-                        message.setQos(0);
-                        sampleClient.publish(topic, message);
-                        System.out.println("publish: " + content);
-                    }
-
-                    Thread.sleep(6000);
-                    //web/request/electricity_consumption
-                    if (DataHolder.publishing) {
-                        topic = "web/request/twilight";
-                        content = String.valueOf(3);
-                        message = new MqttMessage(content.getBytes());
-                        message.setQos(0);
-                        sampleClient.publish(topic, message);
-                        System.out.println("publish: " + content);
-                    }
 
                     Thread.sleep(3000);
                     //topic test/3
@@ -1716,20 +1660,20 @@ public class MQTT_demo {
 //                        System.out.println("publish: " + userArrayRegister.toString());
 //                    }
 
-                    Thread.sleep(3000);
-                    //Login
-                    if (DataHolder.publishing) {
-                        System.out.println("Trying to do a login");
-                        topic = "web/request/user";
-                        //content = String.valueOf(4 * counting);
-                        //message = new MqttMessage(content.getBytes());
-                        String[] userArray = new String[]{"testuser1", "12345"};
-                        sampleClient.publish(topic, new MqttMessage(gson.toJson(userArray).getBytes()));
-                        //message.setQos(0);
-                        //sampleClient.publish(topic, message);
-                        System.out.println("publish: Login: " + userArray[0]);
-                        Thread.sleep(3000);
-                    }
+//                    Thread.sleep(3000);
+//                    //Login
+//                    if (DataHolder.publishing) {
+//                        System.out.println("Trying to do a login");
+//                        topic = "web/request/user";
+//                        //content = String.valueOf(4 * counting);
+//                        //message = new MqttMessage(content.getBytes());
+//                        String[] userArray = new String[]{"testuser1", "12345"};
+//                        sampleClient.publish(topic, new MqttMessage(gson.toJson(userArray).getBytes()));
+//                        //message.setQos(0);
+//                        //sampleClient.publish(topic, message);
+//                        System.out.println("publish: Login: " + userArray[0]);
+//                        Thread.sleep(3000);
+//                    }
 
 
 //                    //Publishing an ArrayList as a test
