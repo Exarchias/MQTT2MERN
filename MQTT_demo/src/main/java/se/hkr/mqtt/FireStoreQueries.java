@@ -49,6 +49,8 @@ public class FireStoreQueries {
 //        echoClient.terminate();
         System.out.print("Creating a document with the name " + documentName);
         System.out.println(" inside the collection " + collectionName);
+        MDB mdb = new MDB("yolo", collectionName);
+        mdb.testHandshake(documentName);
     }
 
     //It creates a document inside a Collection. If the collection does not exist, it creates one and adds an element.

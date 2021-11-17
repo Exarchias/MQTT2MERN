@@ -1,6 +1,10 @@
 package se.hkr.mqtt;
 
 public class Configurations {
+    //MongoDb
+    static String MongoDBPort = "27017";
+    static String MongoDBUri = "mongodb://localhost:";
+
     //Server
     static String ipAddress = "localhost"; //The IP address of the Server which the Client wishes to connect
     static int destinationPort = 2345; //The port of the Server which the Client wishes to connect
