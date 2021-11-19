@@ -8,5 +8,6 @@ public class DataToMDB {
         //mdb.testHandshake("testdocument");
         String documentName = topic + "_" + unit_id + "_T"+ temperature;
         mdb.createAmeasurement(documentName, unit_id, temperature);
+        System.out.println("Topic:" + topic + " unit_id:" + unit_id + " temperature:" + temperature);
     }
 }
