@@ -14,8 +14,8 @@ public class Main {
     public static void streamGenerator(int topics){
         while(true){
             for(int x=0; x<topics; x++){
-                String topic = "sensor_" + x;
-                recordGenerator(topic);
+                String topic = "measurements";
+                recordGenerator(topic, x);
 
                 //Just to delay it a bit
                 try {
@@ -27,9 +27,9 @@ public class Main {
         }
     }
 
-    public static void recordGenerator(String topic){
+    public static void recordGenerator(String topic, double unitid){
         SecureRandom rand = new SecureRandom();
-        double unitid = rand.nextDouble() * 10000;
+        //double unitid = rand.nextDouble() * 10000;
         double temperature = rand.nextInt(25);
         DataToMDB.sendMeasurement(topic, unitid, temperature);
     }

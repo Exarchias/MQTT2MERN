@@ -24,17 +24,14 @@ function Measurements() {
         msg = json2;
         console.log(json2[0]);
         setData(json2);
-        console.log("With stringify: " + JSON.stringify(data[0]._id));
-        console.log("WithOUT stringify: " + data[0]._id);
+        console.log("With stringify: " + JSON.stringify(data));
+        //console.log("WithOUT stringify: " + data[0]._id);
     }
 
     return (
         <section>
             <h1>Measurements</h1>
-            <FreakingTable data={data}/>
-            <ol>
-            {data!=null ? data.map((item) => <li>{item._id} </li>):""}
-            </ol>
+            <p>{JSON.stringify(data)}</p>
             <button onClick={fetchMeasurements2}>log Data</button>
             <button onClick={fetchMeasurements}>Fetch Data</button>
             
