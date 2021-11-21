@@ -26,7 +26,7 @@ async function method4() {
     return (
         <div>
             <h1>The freaking data</h1>
-            <p>It works this time? {data.data!=null ? data.data[0]._id: "nah..."}</p>
+            <p>It works this time? {data.data!=null ? data.data[0].name: "nah..."}</p>
             <table>
 <thead>
   <tr>
