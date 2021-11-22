@@ -6,7 +6,6 @@ import Measurements from "./components/Measurements";
 ReactDOM.render(
     <div>
     <Measurements/>
-    <LifeCycle />
     </div>,
     document.getElementById("root")
 );

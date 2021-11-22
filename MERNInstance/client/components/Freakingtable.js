@@ -24,50 +24,45 @@ async function method4() {
 
     return (
         <div>
-            <h1>The freaking data</h1>
-            <p>It works this time? {data.data!=null ? data.data[0]._id: "nah..."}</p>
+            <p>Average Temperature: {data.data!=null ? data.data[0].temperature: "no data avaliable"} <br />
+            <b>The last values 5 values of {data.data!=null ? data.data[0].unit_id : "[Please Select a sensor]"}</b></p>
             <table>
 <thead>
   <tr>
-    <th onClick={method1}>id</th>
-    <th onClick={method2}>unit_id</th>
+    <th onClick={method1}>unit_id</th>
+    <th onClick={method2}>created_at</th>
     <th onClick={method3}>temperature</th>
-    <th onClick={method4}>unix_timestamp</th>
   </tr>
 </thead>
 <tbody>
-  <tr>
-    <td>{data.data!=null ? data.data[data.data.length - 5]._id: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 5].unit_id: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 5].temperature: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 5].unix_timestamp: ""}</td>
+<tr>
+  <td>{data.data!=null ? data.data[data.data.length - 5].unit_id: ""}</td>
+  <td>{data.data!=null ? JSON.stringify(data.data[data.data.length - 5].created_at): ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 5].temperature: ""}</td>
   </tr>
   <tr>
-  <td>{data.data!=null ? data.data[data.data.length - 4]._id: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 4].unit_id: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 4].temperature: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 4].unix_timestamp: ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 4].unit_id: ""}</td>
+  <td>{data.data!=null ? JSON.stringify(data.data[data.data.length - 4].created_at): ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 4].temperature: ""}</td>
   </tr>
   <tr>
-  <td>{data.data!=null ? data.data[data.data.length - 3]._id: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 3].unit_id: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 3].temperature: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 3].unix_timestamp: ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 3].unit_id: ""}</td>
+  <td>{data.data!=null ? JSON.stringify(data.data[data.data.length - 3].created_at): ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 3].temperature: ""}</td>
   </tr>
   <tr>
-  <td>{data.data!=null ? data.data[data.data.length - 2]._id: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 2].unit_id: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 2].temperature: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 2].unix_timestamp: ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 2].unit_id: ""}</td>
+  <td>{data.data!=null ? JSON.stringify(data.data[data.data.length - 2].created_at): ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 2].temperature: ""}</td>
   </tr>
   <tr>
-  <td>{data.data!=null ? data.data[data.data.length - 1]._id: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 1].unit_id: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 1].temperature: ""}</td>
-    <td>{data.data!=null ? data.data[data.data.length - 1].unix_timestamp: ""}</td>
-  </tr>
+  <td>{data.data!=null ? data.data[data.data.length - 1].unit_id: ""}</td>
+  <td>{data.data!=null ? JSON.stringify(data.data[data.data.length - 1].created_at): ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 1].temperature: ""}</td>
+  </tr> 
 </tbody>
 </table>
+            
         </div>
     )
 }

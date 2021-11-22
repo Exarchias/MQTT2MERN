@@ -67,9 +67,8 @@ function Measurements() {
     return (
         <section>
             <h1>Measurements</h1>
-            <p>{data!=null ? data[0].name: ""}</p>
+            <h2>{data2!=null ? "Sensor: " + data2[0].unit_id: "Press a button!"}</h2>
             <FreakingTable data={data2}/>
-            <button onClick={fetchMeasurementsStart}>Live Data</button>
             <button onClick={fetchMeasurementsALL}>Fetch All Data</button>
             <button onClick={fetchMeasurementsB0}>Fetch sensor 0</button>
             <button onClick={fetchMeasurementsB1}>Fetch sensor 1</button>
