@@ -37,27 +37,27 @@ async function method4() {
 <tbody>
 <tr>
   <td>{data.data!=null ? data.data[data.data.length - 5].unit_id: ""}</td>
-  <td>{data.data!=null ? JSON.stringify(data.data[data.data.length - 5].created_at): ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 5].created_at: ""}</td>
   <td>{data.data!=null ? data.data[data.data.length - 5].temperature: ""}</td>
   </tr>
   <tr>
   <td>{data.data!=null ? data.data[data.data.length - 4].unit_id: ""}</td>
-  <td>{data.data!=null ? JSON.stringify(data.data[data.data.length - 4].created_at): ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 4].created_at: ""}</td>
   <td>{data.data!=null ? data.data[data.data.length - 4].temperature: ""}</td>
   </tr>
   <tr>
   <td>{data.data!=null ? data.data[data.data.length - 3].unit_id: ""}</td>
-  <td>{data.data!=null ? JSON.stringify(data.data[data.data.length - 3].created_at): ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 3].created_at: ""}</td>
   <td>{data.data!=null ? data.data[data.data.length - 3].temperature: ""}</td>
   </tr>
   <tr>
   <td>{data.data!=null ? data.data[data.data.length - 2].unit_id: ""}</td>
-  <td>{data.data!=null ? JSON.stringify(data.data[data.data.length - 2].created_at): ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 2].created_at: ""}</td>
   <td>{data.data!=null ? data.data[data.data.length - 2].temperature: ""}</td>
   </tr>
   <tr>
   <td>{data.data!=null ? data.data[data.data.length - 1].unit_id: ""}</td>
-  <td>{data.data!=null ? JSON.stringify(data.data[data.data.length - 1].created_at): ""}</td>
+  <td>{data.data!=null ? data.data[data.data.length - 1].created_at: ""}</td>
   <td>{data.data!=null ? data.data[data.data.length - 1].temperature: ""}</td>
   </tr> 
 </tbody>

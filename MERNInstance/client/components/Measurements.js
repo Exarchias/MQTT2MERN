@@ -54,6 +54,20 @@ function Measurements() {
         setData2(result);
     }
 
+    async function fetchMeasurementsBF() {
+        const response = await fetch("/api/measurements");
+        const json = await response.json();
+        setData(json);
+        const num = document.getElementById('theNumber').value;
+        let result = json.filter(item => item.unit_id == num);
+        if(result.length != 0){
+            setData2(result);
+        } else {
+            result = json.filter(item => item.unit_id == 0);
+            setData2(result);
+        }
+    }
+
     async function fetchMeasurements2() {
         const response = await fetch("/api/measurements");
         const json2 = await response.json();
@@ -69,6 +83,8 @@ function Measurements() {
             <h1>Measurements</h1>
             <h2>{data2!=null ? "Sensor: " + data2[0].unit_id: "Press a button!"}</h2>
             <FreakingTable data={data2}/>
+            <form><textarea id="theNumber"></textarea></form>
+            <button onClick={fetchMeasurementsBF}>Fetch custom sensor</button>
             <button onClick={fetchMeasurementsALL}>Fetch All Data</button>
             <button onClick={fetchMeasurementsB0}>Fetch sensor 0</button>
             <button onClick={fetchMeasurementsB1}>Fetch sensor 1</button>
